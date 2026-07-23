@@ -15,27 +15,32 @@ import UIKit
 
 final class GameCoordinator {
 
-    private let window: UIWindow
-    private let nav: UINavigationController
+//    private let window: UIWindow
+    private var nav: UINavigationController?
     private let saveStore = SaveStore()
 
-    init(window: UIWindow) {
-        self.window = window
-        self.nav = UINavigationController()
-        nav.setNavigationBarHidden(true, animated: false)
-        window.rootViewController = nav
-    }
+//    init(window: UIWindow) {
+//        self.window = window
+//
+//        window.rootViewController = nav
+//    }
 
     /// 启动：展示主菜单。
-    func start() {
+    func start() -> UINavigationController {
+        
+        self.nav = UINavigationController()
+        nav!.setNavigationBarHidden(true, animated: false)
+        
         let menu = MenuViewController(saveStore: saveStore)
         menu.onPlay = { [weak self] in self?.showLevelSelect() }
         menu.onContinue = { [weak self] in
             guard let self else { return }
             self.startLevel(self.saveStore.highestUnlocked)
         }
-        nav.setViewControllers([menu], animated: false)
-        window.makeKeyAndVisible()
+        nav!.setViewControllers([menu], animated: false)
+//        window.makeKeyAndVisible()
+        
+        return nav!
     }
 
     // MARK: - 关卡选择
@@ -43,8 +48,8 @@ final class GameCoordinator {
     private func showLevelSelect() {
         let select = LevelSelectViewController(saveStore: saveStore)
         select.onPick = { [weak self] id in self?.startLevel(id) }
-        select.onBack = { [weak self] in self?.nav.popViewController(animated: true) }
-        nav.pushViewController(select, animated: true)
+        select.onBack = { [weak self] in self?.nav!.popViewController(animated: true) }
+        nav!.pushViewController(select, animated: true)
     }
 
     // MARK: - 进入关卡
@@ -56,25 +61,25 @@ final class GameCoordinator {
             // 用替换而非 push，避免关卡在导航栈里无限堆叠。
             self?.replaceTop(with: nextId)
         }
-        nav.pushViewController(game, animated: true)
+        nav!.pushViewController(game, animated: true)
     }
 
     private func replaceTop(with id: Int) {
         let game = GameViewController(levelId: id, saveStore: saveStore)
         game.onExit = { [weak self] in self?.popToMenuOrSelect() }
         game.onAdvance = { [weak self] nextId in self?.replaceTop(with: nextId) }
-        var stack = nav.viewControllers
+        var stack = nav!.viewControllers
         if !stack.isEmpty { stack.removeLast() }
         stack.append(game)
-        nav.setViewControllers(stack, animated: true)
+        nav!.setViewControllers(stack, animated: true)
     }
 
     private func popToMenuOrSelect() {
         // 回退到导航栈里最近的非游戏界面（关卡选择或主菜单）。
-        if let target = nav.viewControllers.last(where: { !($0 is GameViewController) }) {
-            nav.popToViewController(target, animated: true)
+        if let target = nav!.viewControllers.last(where: { !($0 is GameViewController) }) {
+            nav!.popToViewController(target, animated: true)
         } else {
-            nav.popToRootViewController(animated: true)
+            nav!.popToRootViewController(animated: true)
         }
     }
 }

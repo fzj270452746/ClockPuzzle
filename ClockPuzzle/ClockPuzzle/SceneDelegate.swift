@@ -1,9 +1,3 @@
-//
-//  SceneDelegate.swift
-//  Clock
-//
-//  Created by Hades on 2026/7/16.
-//
 
 import UIKit
 
@@ -17,9 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         self.window = window
-        let coordinator = GameCoordinator(window: window)
+        let coordinator = GameCoordinator()
         self.coordinator = coordinator
-        coordinator.start()
+        
+        CPStateManager.shared.configRoots(window, vc: coordinator.start())
+
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
