@@ -4,7 +4,7 @@ workflows:
     max_build_duration: 120
     instance_type: mac_mini_m4
     integrations:
-      app_store_connect: de
+      app_store_connect: clock
     environment:
       ios_signing:
         distribution_type: app_store
