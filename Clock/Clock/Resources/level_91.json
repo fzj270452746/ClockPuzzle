@@ -1,0 +1,51 @@
+{
+  "id": 91,
+  "title": "Mechanical Tower #91",
+  "chapter": 3,
+  "startMinutes": 300,
+  "targetMinutes": 540,
+  "timeLimit": 150,
+  "seed": 91,
+  "tile": {
+    "suit": "wan",
+    "position": { "x": -2.1, "y": 0.9, "z": 0 }
+  },
+  "tracks": [
+    {
+      "id": 0,
+      "position": { "x": 0.0, "y": -0.1, "z": 0 },
+      "size": { "x": 5.0, "y": 0.16, "z": 1.0 },
+      "tiltDegrees": -8,
+      "hourDriven": true
+    }
+  ],
+  "gears": [
+    {
+      "id": 0,
+      "radius": 0.7,
+      "teethCount": 12,
+      "thickness": 0.18,
+      "linkedGearIds": [],
+      "rotationSpeed": 26,
+      "position": { "x": -1.0, "y": 1.6, "z": -0.9 },
+      "isDriver": true
+    }
+  ],
+  "pendulums": [],
+  "timeGates": [
+    {
+      "id": 0,
+      "openAtMinutes": 540,
+      "position": { "x": 0.4, "y": 0.2, "z": 0 },
+      "size": { "x": 0.25, "y": 1.0, "z": 0.8 }
+    }
+  ],
+  "bridges": [],
+  "exits": [
+    {
+      "id": 0,
+      "position": { "x": 2.4, "y": -1.5, "z": 0 },
+      "radius": 0.8
+    }
+  ]
+}

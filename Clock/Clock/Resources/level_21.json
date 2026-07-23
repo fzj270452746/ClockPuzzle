@@ -1,0 +1,49 @@
+{
+  "id": 21,
+  "title": "Pendulum Hall #21",
+  "chapter": 1,
+  "startMinutes": 300,
+  "targetMinutes": 480,
+  "timeLimit": 170,
+  "seed": 21,
+  "tile": {
+    "suit": "bamboo",
+    "position": { "x": -2.1, "y": 0.9, "z": 0 }
+  },
+  "tracks": [
+    {
+      "id": 0,
+      "position": { "x": 0.0, "y": -0.2, "z": 0 },
+      "size": { "x": 5.0, "y": 0.16, "z": 1.0 },
+      "tiltDegrees": -17,
+      "hourDriven": false
+    }
+  ],
+  "gears": [],
+  "pendulums": [
+    {
+      "id": 0,
+      "amplitude": 30,
+      "period": 1.7,
+      "armLength": 1.2,
+      "bobRadius": 0.22,
+      "position": { "x": -0.4, "y": 2.3, "z": 0 }
+    }
+  ],
+  "timeGates": [
+    {
+      "id": 0,
+      "openAtMinutes": 480,
+      "position": { "x": 0.2, "y": 0.25, "z": 0 },
+      "size": { "x": 0.25, "y": 1.0, "z": 0.8 }
+    }
+  ],
+  "bridges": [],
+  "exits": [
+    {
+      "id": 0,
+      "position": { "x": 2.4, "y": -1.6, "z": 0 },
+      "radius": 0.8
+    }
+  ]
+}

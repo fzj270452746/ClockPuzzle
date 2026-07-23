@@ -1,0 +1,58 @@
+{
+  "id": 51,
+  "title": "Gear Castle #51",
+  "chapter": 2,
+  "startMinutes": 300,
+  "targetMinutes": 480,
+  "timeLimit": 160,
+  "seed": 51,
+  "tile": {
+    "suit": "dot",
+    "position": { "x": -2.3, "y": 1.1, "z": 0 }
+  },
+  "tracks": [
+    {
+      "id": 0,
+      "position": { "x": -1.4, "y": 0.3, "z": 0 },
+      "size": { "x": 2.6, "y": 0.16, "z": 1.0 },
+      "tiltDegrees": -16,
+      "hourDriven": false
+    },
+    {
+      "id": 1,
+      "position": { "x": 1.7, "y": -0.7, "z": 0 },
+      "size": { "x": 2.2, "y": 0.16, "z": 1.0 },
+      "tiltDegrees": -16,
+      "hourDriven": false
+    }
+  ],
+  "gears": [
+    {
+      "id": 0,
+      "radius": 0.8,
+      "teethCount": 14,
+      "thickness": 0.18,
+      "linkedGearIds": [],
+      "rotationSpeed": 28,
+      "position": { "x": -1.2, "y": 1.7, "z": -0.9 },
+      "isDriver": true
+    }
+  ],
+  "pendulums": [],
+  "timeGates": [],
+  "bridges": [
+    {
+      "id": 0,
+      "extendAtMinutes": 480,
+      "position": { "x": -0.1, "y": -0.15, "z": 0 },
+      "length": 1.4
+    }
+  ],
+  "exits": [
+    {
+      "id": 0,
+      "position": { "x": 2.5, "y": -1.8, "z": 0 },
+      "radius": 0.8
+    }
+  ]
+}
