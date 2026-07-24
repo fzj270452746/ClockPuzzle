@@ -2,7 +2,7 @@ workflows:
   ios-native-quick-start:
     name: Clock Puzzle
     max_build_duration: 120
-    instance_type: mac_mini_m4
+    instance_type: mac_mini_m2
     integrations:
       app_store_connect: clock
     environment:
